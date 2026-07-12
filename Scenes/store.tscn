@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://x10fwtkq8kwf"]
+
+[ext_resource type="PackedScene" uid="uid://bphvjbe6e812h" path="res://Scenes/player.tscn" id="1_c3i85"]
+[ext_resource type="PackedScene" uid="uid://dn7iyhrc00rg4" path="res://Scenes/knight.tscn" id="2_lkwxl"]
+[ext_resource type="PackedScene" uid="uid://o8y0hd8wccns" path="res://Scenes/manager.tscn" id="3_h38w0"]
+
+[node name="Store" type="Node" unique_id=1368084191]
+
+[node name="Player" parent="." unique_id=1822226727 instance=ExtResource("1_c3i85")]
+position = Vector2(518, 338)
+
+[node name="Knight" parent="." unique_id=1326804839 instance=ExtResource("2_lkwxl")]
+position = Vector2(292, 331)
+
+[node name="Manager" parent="." unique_id=360266540 instance=ExtResource("3_h38w0")]
+position = Vector2(609, 122)
