@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://x10fwtkq8kwf"]
+
+[ext_resource type="PackedScene" uid="uid://bphvjbe6e812h" path="res://Scenes/player.tscn" id="1_fdj0q"]
+[ext_resource type="Script" uid="uid://cc235e3ah07hu" path="res://Scripts/shop.gd" id="1_k6jq0"]
+[ext_resource type="PackedScene" uid="uid://dn7iyhrc00rg4" path="res://Scenes/knight.tscn" id="2_k6jq0"]
+[ext_resource type="PackedScene" uid="uid://o8y0hd8wccns" path="res://Scenes/manager.tscn" id="3_3ps1r"]
+[ext_resource type="PackedScene" uid="uid://xef44ro5wb3h" path="res://Scenes/start_game_hitbox.tscn" id="4_ymrm4"]
+
+[node name="Shop" type="Node" unique_id=1368084191]
+script = ExtResource("1_k6jq0")
+
+[node name="Knight" parent="." unique_id=1326804839 instance=ExtResource("2_k6jq0")]
+position = Vector2(400, 300)
+
+[node name="Manager" parent="." unique_id=360266540 instance=ExtResource("3_3ps1r")]
+position = Vector2(700, 100)
+
+[node name="StartGameHitbox" parent="." unique_id=77044130 instance=ExtResource("4_ymrm4")]
+position = Vector2(800, 300)
+
+[node name="Player" parent="." unique_id=1822226727 instance=ExtResource("1_fdj0q")]
+position = Vector2(600, 300)

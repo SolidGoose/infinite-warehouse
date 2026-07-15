@@ -1,21 +1,20 @@
 extends CharacterBody2D
 
-
-const SPEED = 40000.0
+const SPEED = 30000.0
 
 @onready var interaction_box = $InteractionBox
 
 
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector("left", "right", "up", "down")
+	var direction_vector = Input.get_vector("left", "right", "up", "down")
 
 	# var can_move = GameManager.can_move
 
-	if direction and GameManager.can_move:
-		velocity = direction * SPEED * delta
+	if direction_vector and GameManager.can_move:
+		velocity = direction_vector * SPEED * delta
+		rotation = direction_vector.angle()
+		# print("Moving in direction: ", direction_vector, " with velocity: ", velocity)
 	else:
-		# velocity.x = move_toward(velocity.x, 0, SPEED * delta)
-		# velocity.y = move_toward(velocity.y, 0, SPEED * delta)
 		velocity = Vector2.ZERO
 
 	move_and_slide()
@@ -27,10 +26,29 @@ func _physics_process(delta: float) -> void:
 			var body_name = bodies[0].name.to_lower()
 			print("Interacting with \"", body_name, "\" body")
 			GameManager.start_dialogue(body_name, "start")
+	
+	var current_scene_name = get_tree().current_scene.name
+	var screen_width: float = get_viewport().get_visible_rect().size.x - 5
+	var screen_height: float = get_viewport().get_visible_rect().size.y - 5
 
+	var player_x: float = position.x
+	var player_y: float = position.y
 
-# func _on_interaction_box_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-# 	var name = body.name
+	if current_scene_name != "Shop":
+		if player_x > screen_width:
+			global_position.x = player_x
+			player_x -= 5
+			GameManager.change_room(Vector2(player_x, player_y))
+		elif player_x < 0:
+			global_position.x = player_x
+			player_x += 5
+			GameManager.change_room(Vector2(player_x, player_y))
+		elif player_y > screen_height:
+			global_position.y = player_y
+			player_y -= 5
+			GameManager.change_room(Vector2(player_x, player_y))
+		elif player_y < 0:
+			global_position.y = player_y
+			player_y += 5
+			GameManager.change_room(Vector2(player_x, player_y))
 
-# 	if name != "Player":
-# 		print("Interaction box body shape entered: %s" % body.name)
