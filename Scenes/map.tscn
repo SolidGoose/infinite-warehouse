@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://cbpjpplhhq6p6"]
+
+[ext_resource type="PackedScene" uid="uid://cvmax3j8ktj6o" path="res://Scenes/room_icon.tscn" id="1_ci6au"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a7cr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nv1a"]
+
+[node name="Map" type="CanvasLayer" unique_id=442541906]
+
+[node name="CanvasControl" type="Control" parent="." unique_id=1598252591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Canvas" type="ColorRect" parent="CanvasControl" unique_id=103214649]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.5064582, 0.44909537, 0.4723832, 1)
+
+[node name="RoomIcons" type="Control" parent="CanvasControl/Canvas" unique_id=1965436231]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Shop" parent="CanvasControl/Canvas/RoomIcons" unique_id=328267736 instance=ExtResource("1_ci6au")]
+layout_mode = 1
+anchor_left = 0.25833333
+anchor_top = 0.41923076
+anchor_right = 0.25833333
+anchor_bottom = 0.41923076
+offset_left = 175.66667
+offset_top = 201.23077
+offset_right = 175.66667
+offset_bottom = 201.23077
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 3
+background_color = Color(0.7841611, 0.5570602, 0.15648103, 1)
+right_border_visible = false
+
+[node name="Room_1_10" parent="CanvasControl/Canvas/RoomIcons" unique_id=1042287645 instance=ExtResource("1_ci6au")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 246.0
+offset_top = 188.0
+offset_right = 246.0
+offset_bottom = 188.0
+grow_horizontal = 1
+grow_vertical = 1
+background_color = Color(1, 1, 1, 1)
+right_border_visible = false
+bottom_border_visible = false
+right_bottom_angle_visible = false
+
+[node name="Room_1_11" parent="CanvasControl/Canvas/RoomIcons" unique_id=1906318189 instance=ExtResource("1_ci6au")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 246.0
+offset_top = 218.0
+offset_right = 246.0
+offset_bottom = 218.0
+grow_horizontal = 1
+grow_vertical = 1
+background_color = Color(1, 1, 1, 1)
+left_border_visible = false
+right_border_visible = false
+top_border_visible = false
+bottom_border_visible = false
+right_bottom_angle_visible = false
+right_top_angle_visible = false
+
+[node name="Room_1_12" parent="CanvasControl/Canvas/RoomIcons" unique_id=1060857334 instance=ExtResource("1_ci6au")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 246.0
+offset_top = 248.0
+offset_right = 246.0
+offset_bottom = 248.0
+grow_horizontal = 1
+grow_vertical = 1
+background_color = Color(1, 1, 1, 1)
+right_border_visible = false
+top_border_visible = false
+right_top_angle_visible = false
+
+[node name="Room_2_10" parent="CanvasControl/Canvas/RoomIcons" unique_id=1309088402 instance=ExtResource("1_ci6au")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 306.0
+offset_top = 188.0
+offset_right = 306.0
+offset_bottom = 188.0
+grow_horizontal = 1
+grow_vertical = 1
+background_color = Color(1, 1, 1, 1)
+left_border_visible = false
+bottom_border_visible = false
+left_bottom_angle_visible = false
+
+[node name="Room_2_11" parent="CanvasControl/Canvas/RoomIcons" unique_id=1582325297 instance=ExtResource("1_ci6au")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 306.0
+offset_top = 218.0
+offset_right = 306.0
+offset_bottom = 218.0
+grow_horizontal = 1
+grow_vertical = 1
+background_color = Color(1, 1, 1, 1)
+left_border_visible = false
+top_border_visible = false
+bottom_border_visible = false
+left_bottom_angle_visible = false
+left_top_angle_visible = false
+
+[node name="Room_2_12" parent="CanvasControl/Canvas/RoomIcons" unique_id=1361879001 instance=ExtResource("1_ci6au")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 306.0
+offset_top = 248.0
+offset_right = 306.0
+offset_bottom = 248.0
+grow_horizontal = 1
+grow_vertical = 1
+background_color = Color(1, 1, 1, 1)
+left_border_visible = false
+top_border_visible = false
+left_top_angle_visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasControl" unique_id=1572848287]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasControl/MarginContainer" unique_id=128943688]
+layout_mode = 2
+
+[node name="MapIconsPanel" type="PanelContainer" parent="CanvasControl/MarginContainer/VBoxContainer" unique_id=2107280093]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.12
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8a7cr")
+
+[node name="Control" type="Control" parent="CanvasControl/MarginContainer/VBoxContainer/MapIconsPanel" unique_id=1129104723]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasControl/MarginContainer/VBoxContainer/MapIconsPanel" unique_id=2054601471]
+layout_mode = 2
+columns = 10
+
+[node name="DescriptionPanel" type="PanelContainer" parent="CanvasControl/MarginContainer/VBoxContainer" unique_id=506865542]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6nv1a")

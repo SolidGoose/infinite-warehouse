@@ -123,22 +123,30 @@ offset_top = -219.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=1694170231]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer" unique_id=739026679]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Balloon/MarginContainer/HBoxContainer" unique_id=942544546]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer/HBoxContainer" unique_id=1694170231]
 clip_children = 2
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1063360113]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer" unique_id=1063360113]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1704108715]
+[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1704108715]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=887526115]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=887526115]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=860682711]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=860682711]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
@@ -148,22 +156,22 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2083064167 instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2083064167 instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
 
-[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=184968563]
+[node name="Control" type="Control" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=184968563]
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=865783548]
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=865783548]
 unique_name_in_owner = true
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1239182002]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1239182002]
 libraries/ = SubResource("AnimationLibrary_1337t")
 autoplay = &"progress"
 

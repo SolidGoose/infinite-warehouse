@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bb67sauiol7lf"]
+
+[ext_resource type="Script" uid="uid://bdcry4mjq3cf6" path="res://Scripts/timer_gui.gd" id="1_xr6bh"]
+[ext_resource type="FontFile" uid="uid://dk3l2no35nqvf" path="res://Assets/Fonts/GentleDad.otf" id="2_anx0g"]
+[ext_resource type="Texture2D" uid="uid://4kpkkuwbin51" path="res://Assets/red_dot.png" id="3_r6tay"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8a7cr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r6tay")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="TimerGUI" type="CanvasLayer" unique_id=1264418324]
+visible = false
+script = ExtResource("1_xr6bh")
+
+[node name="TimerLabelControl" type="Control" parent="." unique_id=1276939444]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="TimerLabel" type="Label" parent="TimerLabelControl" unique_id=230053627]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_anx0g")
+theme_override_font_sizes/font_size = 32
+text = "Time left"
+
+[node name="SpriteControl" type="Control" parent="." unique_id=1289403163]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpriteControl" unique_id=1496454116]
+position = Vector2(-120, 120)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_8a7cr")
+animation = &"idle"
+
+[node name="Timer" type="Timer" parent="." unique_id=1924671180]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

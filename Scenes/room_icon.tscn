@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://cvmax3j8ktj6o"]
+
+[ext_resource type="Script" uid="uid://c7c57yqn8by5e" path="res://Scripts/room_icon.gd" id="1_sol1l"]
+[ext_resource type="Texture2D" uid="uid://4kpkkuwbin51" path="res://Assets/red_dot.png" id="2_ro16q"]
+
+[sub_resource type="Animation" id="Animation_ktxry"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RedDotSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ea1lp"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RedDotSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.06666667, 0.6, 1.9666667),
+"transitions": PackedFloat32Array(1.7411014, 0.21022417, 1.8025014),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvfg8"]
+_data = {
+&"RESET": SubResource("Animation_ktxry"),
+&"idle": SubResource("Animation_ea1lp")
+}
+
+[node name="RoomIcon" type="Control" unique_id=328267736]
+layout_mode = 3
+anchor_right = 0.075
+anchor_bottom = 0.05
+offset_right = 740.0
+offset_bottom = 570.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sol1l")
+
+[node name="Background" type="ColorRect" parent="." unique_id=942728309]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 30.0
+
+[node name="Foreground" type="ColorRect" parent="Background" unique_id=535191751]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftBorder" type="ColorRect" parent="Background" unique_id=1327430316]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 2.0
+offset_bottom = 28.0
+color = Color(0, 0, 0, 1)
+
+[node name="RightBorder" type="ColorRect" parent="Background" unique_id=1920703523]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 2.0
+offset_right = 60.0
+offset_bottom = 28.0
+color = Color(0, 0, 0, 1)
+
+[node name="TopBorder" type="ColorRect" parent="Background" unique_id=1709228255]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 58.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="BottomBorder" type="ColorRect" parent="Background" unique_id=670759866]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 58.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="LeftBottomAngle" type="ColorRect" parent="Background" unique_id=349770898]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 2.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="LeftTopAngle" type="ColorRect" parent="Background" unique_id=1522392446]
+layout_mode = 0
+offset_right = 2.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="RightTopAngle" type="ColorRect" parent="Background" unique_id=162182295]
+layout_mode = 0
+offset_left = 58.0
+offset_right = 60.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="RightBottomAngle" type="ColorRect" parent="Background" unique_id=1335102200]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 28.0
+offset_right = 60.0
+offset_bottom = 30.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background" unique_id=74513110]
+libraries/ = SubResource("AnimationLibrary_rvfg8")
+autoplay = &"idle"
+
+[node name="RedDotSprite" type="Sprite2D" parent="." unique_id=1640035386]
+visible = false
+position = Vector2(30.000002, 15.000001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ro16q")
+
+[node name="Mask" type="ColorRect" parent="." unique_id=1313158354]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
